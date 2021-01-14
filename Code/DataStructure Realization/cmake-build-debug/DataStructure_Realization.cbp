@@ -86,6 +86,9 @@
 		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Object.h">
 			<Option target="DataStructure_Realization"/>
 		</Unit>
+		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/SmartPointer.h">
+			<Option target="DataStructure_Realization"/>
+		</Unit>
 		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/SourceCodes/Exception.cpp">
 			<Option target="DataStructure_Realization"/>
 		</Unit>
