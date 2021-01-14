@@ -1,0 +1,4 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/cmake-build-debug
