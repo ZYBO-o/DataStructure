@@ -19,15 +19,12 @@ namespace DataStructure
             m_pointer = p;
         }
 
-
         //拷贝函数
         SmartPointer(const SmartPointer<T>& obj)
         {
             m_pointer = obj.m_pointer;
             const_cast<SmartPointer<T>&>(obj).m_pointer = nullptr;
         }
-
-
 
         //重载 = 运算符
         SmartPointer<T>& operator = (const SmartPointer<T>& obj)
@@ -67,7 +64,6 @@ namespace DataStructure
         {
             return m_pointer;
         }
-
 
         ~SmartPointer()
         {
