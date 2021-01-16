@@ -159,5 +159,57 @@ int main() {
 + `catch(...)`用于处理所有类型的异常
 + 任何异常都只能被捕获(`catch`)一次。
 
+### 3.异常类的构建
 
+#### 注意事项
+
++ 异常的类型可以是自定义类类型
++ 赋值兼容性原则在异常匹配中依旧适用
++ 对于类类型异常的匹配依旧是自上而下严格匹配
+  + 匹配子类异常的`catch`放在上面
+  + 匹配父类异常的`catch`放在下面
+
+#### 结构设计
+
+<img src="../images/1.png" style="zoom:32%;" />
+
+异常类的设计结构如上图所示，`Exception`是抽象父类，主要是被继承，主要为五个异常类型：
+
++ `NullPointerException`：空指针异常
++ `ArithmeticException`：计算异常
++ `IndexOutOfBoundsException`：越界异常
++ `NoEnoughMemoryException`：内存不足异常
++ `InvaildParameterException`：无效参数异常
+
+#### 抽象父类的设计
+
+[代码链接]()
+
+> 定义与声明在`Exception.h`，实现在`Exception.cpp`
+
+```c++
+class Exception {
+protected:
+    //变量m_message表示异常的具体信息
+    char* m_message;
+    //变量m_location表示异常的定位
+    char* m_location;
+    //定义辅助函数进行初始化，
+    //因为下面三个构造函数的内部逻辑是相似的，所以可以借用辅助函数来进行初始化的操作
+    void init(const char *message, const char *file, int line);
+
+  public:
+    Exception(const char *message);
+    Exception(const char *file, int line);
+    Exception(const char *message, const char *file, int line);
+    Exception(const Exception &e);
+    Exception &operator=(const Exception &e);
+    //message函数得到异常的信息
+    virtual const char* message() const;
+    //location函数得到异常的定位
+    virtual const char* location() const;
+    //纯虚析构函数——抽象类
+    virtual ~Exception() = 0;
+};
+```
 

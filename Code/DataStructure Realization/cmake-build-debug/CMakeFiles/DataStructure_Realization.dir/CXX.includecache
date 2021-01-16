@@ -6,6 +6,8 @@
 
 #IncludeRegexTransform: 
 
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Exception.h
+
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/SmartPointer.h
 
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/main.cpp
@@ -13,4 +15,6 @@ iostream
 -
 HeadCodes/SmartPointer.h
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/SmartPointer.h
+HeadCodes/Exception.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Exception.h
 

@@ -4,6 +4,7 @@
 CMakeFiles/DataStructure_Realization.dir/SourceCodes/Exception.cpp.o: ../HeadCodes/Exception.h
 CMakeFiles/DataStructure_Realization.dir/SourceCodes/Exception.cpp.o: ../SourceCodes/Exception.cpp
 
+CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/Exception.h
 CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/SmartPointer.h
 CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../main.cpp
 
