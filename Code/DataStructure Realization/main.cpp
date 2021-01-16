@@ -1,20 +1,32 @@
 #include <iostream>
 #include "HeadCodes/SmartPointer.h"
 #include "HeadCodes/Exception.h"
+#include "HeadCodes/Object.h"
 
 using namespace std;
 using namespace DataStructure;
 
 
+class Test : public Object
+{
+protected:
+    int i;
+public:
+    Test()
+    {
+        cout << "test" << endl;
+    }
+};
+
 int main() {
 
+    Test *obj1 = new Test();
+    Test *obj2 = new Test();
 
-    try{
-        THROW_EXCEPTION(ArithmeticException, "Test");
-    }catch (const ArithmeticException e) {
-        cout << "const ArithmeticException e" <<endl;
-        cout << e.message() << endl;
-        cout << e.location() << endl;
-    }
-    return 0;
+    delete obj1;
+    delete obj2;
+
+
+
+
 }

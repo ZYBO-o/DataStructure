@@ -217,5 +217,52 @@ protected:
 
 ---
 
-## 三.顶层父类的创建
+## 三.顶层父类
+
+### 1.定义顶层父类的原因
+
+**当代软件架构实践中的经验**
+
++ 尽量使用 **单继承** 的方式进行系统设计
++ 尽量保持系统中只存在 **单一的继承树**
++ 尽量使用 **组合关系** 代替继承关系
+
+以上经验通常是利用顶层父类的创建来进行保证。
+
+**创建`DataStructure::Object`类的意义：**
+
++ 遵循经典设计准则，所有数据结构都继承自`Object`类
++ 定义动态申请内存的行为，提高代码的移植性
+
+> 编译器不同时，对于`new`操作失败后的反馈也不同，利用编写顶层父类来重载操作，可以提高代码的移植性。
+
+### 2.顶层父类的设计
+
+ * Object类是DataStructure中数据结构类的顶层父类
+ * Object类是统一动态内存申请的行为
+ * Object类为纯虚父类，所有子类都能进行动态类型识别
+
+对数据结构对象进行 `new` 和 `delete` 操作时，能有我们期望的行为，而且这个行为在不同的编译器中都是相同的结果。
+
+[代码链接](https://github.com/ZYBO-o/DataStructure/blob/main/Code/DataStructure%20Realization/HeadCodes/Object.h)
+
+> 定义与声明在`Object.h`，实现在`Object.cpp`
+
+```c++
+class Object
+{
+public:
+  	//异常规格说明在new操作失败时，不会抛出异常，而是返回空指针
+    void* operator new (unsigned long size) throw();
+    void operator delete (void* p);
+    void* operator new[] (unsigned long size) throw();
+    void operator delete[] (void* p);
+  	//抽象类，保证所有子类中都有虚函数表的指针，这样就能使用动态类型相关的技术
+    virtual ~Object() = 0;
+};
+```
+
+
+
+
 

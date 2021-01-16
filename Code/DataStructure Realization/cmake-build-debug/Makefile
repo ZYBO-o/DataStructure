@@ -150,6 +150,33 @@ SourceCodes/Exception.cpp.s:
 	$(MAKE) -f CMakeFiles/DataStructure_Realization.dir/build.make CMakeFiles/DataStructure_Realization.dir/SourceCodes/Exception.cpp.s
 .PHONY : SourceCodes/Exception.cpp.s
 
+SourceCodes/Object.o: SourceCodes/Object.cpp.o
+
+.PHONY : SourceCodes/Object.o
+
+# target to build an object file
+SourceCodes/Object.cpp.o:
+	$(MAKE) -f CMakeFiles/DataStructure_Realization.dir/build.make CMakeFiles/DataStructure_Realization.dir/SourceCodes/Object.cpp.o
+.PHONY : SourceCodes/Object.cpp.o
+
+SourceCodes/Object.i: SourceCodes/Object.cpp.i
+
+.PHONY : SourceCodes/Object.i
+
+# target to preprocess a source file
+SourceCodes/Object.cpp.i:
+	$(MAKE) -f CMakeFiles/DataStructure_Realization.dir/build.make CMakeFiles/DataStructure_Realization.dir/SourceCodes/Object.cpp.i
+.PHONY : SourceCodes/Object.cpp.i
+
+SourceCodes/Object.s: SourceCodes/Object.cpp.s
+
+.PHONY : SourceCodes/Object.s
+
+# target to generate assembly for a file
+SourceCodes/Object.cpp.s:
+	$(MAKE) -f CMakeFiles/DataStructure_Realization.dir/build.make CMakeFiles/DataStructure_Realization.dir/SourceCodes/Object.cpp.s
+.PHONY : SourceCodes/Object.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -189,6 +216,9 @@ help:
 	@echo "... SourceCodes/Exception.o"
 	@echo "... SourceCodes/Exception.i"
 	@echo "... SourceCodes/Exception.s"
+	@echo "... SourceCodes/Object.o"
+	@echo "... SourceCodes/Object.i"
+	@echo "... SourceCodes/Object.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

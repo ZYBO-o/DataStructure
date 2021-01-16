@@ -11,7 +11,7 @@
 
 + [智能指针类](https://github.com/ZYBO-o/DataStructure/tree/main/Preparation#%E4%B8%80%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88%E7%B1%BB)
 + [异常类](https://github.com/ZYBO-o/DataStructure/tree/main/Preparation#%E4%BA%8C%E5%BC%82%E5%B8%B8%E7%B1%BB)
-+ [顶层父类]()
++ [顶层父类](https://github.com/ZYBO-o/DataStructure/tree/main/Preparation#%E4%B8%89%E9%A1%B6%E5%B1%82%E7%88%B6%E7%B1%BB)
 
 ## 三.线性结构
 

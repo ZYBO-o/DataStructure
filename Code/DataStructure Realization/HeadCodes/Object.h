@@ -5,4 +5,18 @@
 #ifndef DATASTRUCTURE_REALIZATION_OBJECT_H
 #define DATASTRUCTURE_REALIZATION_OBJECT_H
 
+
+namespace DataStructure
+{
+    class Object
+    {
+    public:
+        void* operator new (unsigned long size) throw();
+        void operator delete (void* p);
+        void* operator new[] (unsigned long size) throw();
+        void operator delete[] (void* p);
+        virtual ~Object() = 0;
+    };
+}
+
 #endif //DATASTRUCTURE_REALIZATION_OBJECT_H
