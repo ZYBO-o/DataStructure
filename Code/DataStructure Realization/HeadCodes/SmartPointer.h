@@ -5,10 +5,12 @@
 #ifndef DATASTRUCTURE_REALIZATION_SMARTPOINTER_H
 #define DATASTRUCTURE_REALIZATION_SMARTPOINTER_H
 
+#include "Object.h"
+
 namespace DataStructure
 {
     template <typename T>
-    class SmartPointer
+    class SmartPointer : public Object
     {
     protected:
         T* m_pointer;

@@ -262,7 +262,18 @@ public:
 };
 ```
 
+### 3.类族结构的进化
 
+DataStructure中所有类都位于单一的继承树：
 
+<img src="../images/2.png" style="zoom:35%;" />
 
+改进的关键点：
+
++ `Exception`类继承自`Object`类
+  + 堆空间中创建异常对象失败时，返回`nullptr`指针
++ 新增`InvalidOperationException`异常类
+  + 成员函数调用时，如果状态不正确，则抛出异常
++ `SmartPointer`类继承自`Object`类
+  + 堆空间中创建智能指针对象失败时，返回`nullptr`指针
 

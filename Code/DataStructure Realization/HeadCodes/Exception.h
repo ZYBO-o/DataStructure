@@ -5,12 +5,15 @@
 #ifndef DATASTRUCTURE_REALIZATION_EXCEPTION_H
 #define DATASTRUCTURE_REALIZATION_EXCEPTION_H
 
+#include "Object.h"
+
 namespace DataStructure
 {
     //定义宏,这样引用异常更方便
     #define THROW_EXCEPTION(e,m) (throw e(m, __FILE_NAME__, __LINE__))
 
-    class Exception {
+    class Exception  : public Object
+{
 
     protected:
         //变量m_message表示异常的具体信息
