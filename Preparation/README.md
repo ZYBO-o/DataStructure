@@ -8,6 +8,8 @@
 
   * [二、异常类](#二异常类)
 
+  * [三、顶层父类](#三顶层父类)
+
     <!-- GFM-TOC -->
 
 ---
@@ -183,7 +185,7 @@ int main() {
 
 #### 抽象父类的设计
 
-[代码链接]()
+[代码链接](https://github.com/ZYBO-o/DataStructure/blob/main/Code/DataStructure%20Realization/HeadCodes/Exception.h)
 
 > 定义与声明在`Exception.h`，实现在`Exception.cpp`
 
@@ -212,4 +214,8 @@ protected:
     virtual ~Exception() = 0;
 };
 ```
+
+---
+
+## 三.顶层父类的创建
 
