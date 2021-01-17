@@ -77,7 +77,7 @@ public:
 + 实现顺序存储结构线性表的 **关键操作** (增,删,改,查,等)
 + 提供数组操作符，方便快速获取元素
 
-[代码链接]()
+[代码链接](https://github.com/ZYBO-o/DataStructure/blob/main/Code/DataStructure%20Realization/HeadCodes/SeqList.h)
 
 ```c++
 template <typename T>
@@ -115,6 +115,8 @@ public:
 + 使用原生数组作为顺序存储空间，静态定义存储空间
 + 使用模板参数决定数组大小
 
+[代码链接](https://github.com/ZYBO-o/DataStructure/blob/main/Code/DataStructure%20Realization/HeadCodes/StaticList.h)
+
 ```c++
 template <typename T, int N>
 class StaticList : public SeqList<T>
@@ -140,6 +142,8 @@ public:
 + 不泄露任何资源
 + 不允许破坏数据
 
+[代码链接](https://github.com/ZYBO-o/DataStructure/blob/main/Code/DataStructure%20Realization/HeadCodes/DynamicList.h)
+
 ```c++
 template <typename T>
 class DynamicList : public SeqList<T>
@@ -154,5 +158,69 @@ public:
 };
 ```
 
+#### 设计优化
 
+对于容器类型的类，可以考虑禁止拷贝构造和赋值操作。
 
+List修改为：
+
+```c++
+template <typename T>
+    class List : public Object
+    {
+    protected:
+        //进制拷贝与赋值操作
+        List(const List&);
+        List& operator = (const List&);
+    public:
+        List() {}
+        //尾部插入
+        virtual bool insert(const T& e) = 0;
+        virtual bool insert(int i, const T& e) = 0;
+        virtual bool remove(int i) = 0;
+        virtual bool set(int i, const T& e) = 0;
+        virtual bool get(int i, T& e) const = 0;
+        virtual int length() const =0;
+        virtual void clear() = 0;
+    };
+```
+
+原因：
+
+```c++
+StaticList<int*,5> s1;
+StaticList<int*,5> s2;
+
+for (int k = 0; k < s1.capacity(); ++k) {
+s1.insert(0,new int(k));
+}
+
+s2 = s1;
+
+for (int m = 0; m < s1.length(); ++m) {
+delete s1[m];
+delete s2[k];
+}
+```
+
+对于以上操作中，`s2 = s1;`会使得`s1`与`s2`都会指向同一片堆空间，所以进行`delete s2[k];`操作时，会出现错误
+
+```c++
+void func{
+        DynamicList<int > d1(5);
+        DynamicList<int > d2 = d1;
+
+        for (int k = 0; k < d1.capacity(); ++k) {
+            d1.insert(k,k);
+            d2.insert(k,k*k);
+        }
+
+        for (int m = 0; m < d1.length(); ++m) {
+            cout << d1[i] << endl;
+        }
+}
+```
+
+以上操作中 `DynamicList<int > d2 = d1;`会使得`d2`中的`m_array`指向`d1`中的`m_array`。所以两个插入操作其实是对一片堆空间进行操作。
+
+最重要的是`func`函数调用结束之后，`d2`与`d1`调用的析构函数删除的是同一片堆空间，即删除两次，会产生错误。
