@@ -1,32 +1,38 @@
 #include <iostream>
 #include "HeadCodes/SmartPointer.h"
 #include "HeadCodes/Exception.h"
-#include "HeadCodes/Object.h"
+#include "HeadCodes/DynamicList.h"
+
 
 using namespace std;
 using namespace DataStructure;
 
 
-class Test : public Object
-{
-protected:
-    int i;
-public:
-    Test()
-    {
-        cout << "test" << endl;
-    }
-};
 
 int main() {
 
-    Test *obj1 = new Test();
-    Test *obj2 = new Test();
 
-    delete obj1;
-    delete obj2;
+    DynamicList<int> l(5) ;
+
+    for (int j = 0; j < l.capacity(); ++j) {
+        l.insert(0,j);
+    }
+
+
+    for (int i = 0; i < l.length(); ++i) {
+        cout << l[i] << endl;
+    }
+
+ 
+
+
+
 
 
 
 
 }
+
+
+
+

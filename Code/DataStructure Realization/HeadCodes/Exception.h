@@ -10,7 +10,7 @@
 namespace DataStructure
 {
     //定义宏,这样引用异常更方便
-    #define THROW_EXCEPTION(e,m) (throw e(m, __FILE_NAME__, __LINE__))
+#define THROW_EXCEPTION(e,m) (throw e(m, __FILE_NAME__, __LINE__))
 
     class Exception  : public Object
 {
@@ -52,7 +52,7 @@ namespace DataStructure
         ArithmeticException() : Exception(nullptr, nullptr,0) {}
         ArithmeticException(const char* message) : Exception(message, nullptr, 0) {}
         ArithmeticException(const char* file, int line) : Exception(nullptr, file, line) {}
-        ArithmeticException(const char* message, const char* file, int line) : Exception(message, file, 0) {}
+        ArithmeticException(const char* message, const char* file, int line) : Exception(message, file, line) {}
 
         ArithmeticException(const ArithmeticException& e) : Exception(e) {}
 
@@ -70,7 +70,7 @@ namespace DataStructure
         NullPointerException() : Exception(nullptr, nullptr,0) {}
         NullPointerException(const char* message) : Exception(message, nullptr, 0) {}
         NullPointerException(const char* file, int line) : Exception(nullptr, file, line) {}
-        NullPointerException(const char* message, const char* file, int line) : Exception(message, file, 0) {}
+        NullPointerException(const char* message, const char* file, int line) : Exception(message, file, line) {}
 
         NullPointerException(const NullPointerException& e) : Exception(e) {}
 
@@ -88,7 +88,7 @@ namespace DataStructure
         IndexOutOfBoundsException() : Exception(nullptr, nullptr,0) {}
         IndexOutOfBoundsException(const char* message) : Exception(message, nullptr, 0) {}
         IndexOutOfBoundsException(const char* file, int line) : Exception(nullptr, file, line) {}
-        IndexOutOfBoundsException(const char* message, const char* file, int line) : Exception(message, file, 0) {}
+        IndexOutOfBoundsException(const char* message, const char* file, int line) : Exception(message, file, line) {}
 
         IndexOutOfBoundsException(const IndexOutOfBoundsException& e) : Exception(e) {}
 
@@ -106,7 +106,7 @@ namespace DataStructure
         NoEnoughMemoryException() : Exception(nullptr, nullptr,0) {}
         NoEnoughMemoryException(const char* message) : Exception(message, nullptr, 0) {}
         NoEnoughMemoryException(const char* file, int line) : Exception(nullptr, file, line) {}
-        NoEnoughMemoryException(const char* message, const char* file, int line) : Exception(message, file, 0) {}
+        NoEnoughMemoryException(const char* message, const char* file, int line) : Exception(message, file, line) {}
 
         NoEnoughMemoryException(const NoEnoughMemoryException& e) : Exception(e) {}
 
@@ -124,7 +124,7 @@ namespace DataStructure
         InvalidParameterException() : Exception(nullptr, nullptr,0) {}
         InvalidParameterException(const char* message) : Exception(message, nullptr, 0) {}
         InvalidParameterException(const char* file, int line) : Exception(nullptr, file, line) {}
-        InvalidParameterException(const char* message, const char* file, int line) : Exception(message, file, 0) {}
+        InvalidParameterException(const char* message, const char* file, int line) : Exception(message, file, line) {}
 
         InvalidParameterException(const InvalidParameterException& e) : Exception(e) {}
 
@@ -142,7 +142,7 @@ namespace DataStructure
         InvalidOperationException() : Exception(nullptr, nullptr,0) {}
         InvalidOperationException(const char* message) : Exception(message, nullptr, 0) {}
         InvalidOperationException(const char* file, int line) : Exception(nullptr, file, line) {}
-        InvalidOperationException(const char* message, const char* file, int line) : Exception(message, file, 0) {}
+        InvalidOperationException(const char* message, const char* file, int line) : Exception(message, file, line) {}
 
         InvalidOperationException(const InvalidOperationException& e) : Exception(e) {}
 
