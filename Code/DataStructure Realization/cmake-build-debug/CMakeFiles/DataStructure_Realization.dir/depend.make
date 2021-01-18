@@ -10,8 +10,11 @@ CMakeFiles/DataStructure_Realization.dir/SourceCodes/Object.cpp.o: ../SourceCode
 
 CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/Array.h
 CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/DynamicArray.h
+CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/DynamicList.h
 CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/Exception.h
+CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/List.h
 CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/Object.h
+CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/SeqList.h
 CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/SmartPointer.h
 CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../main.cpp
 

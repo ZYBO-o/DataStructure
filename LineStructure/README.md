@@ -334,6 +334,65 @@ public:
 
 
 
+#### 代码优化
+
+因为成员函数中有很多重复逻辑的代码，所以可以进行优化。
+
++ `init`函数
+  + 对象构造时的初始化操作
+
+```c++
+void init(T* array, int length)
+{
+    if(array != nullptr)
+    {
+        this->m_array = array;
+        this->m_length = length;
+    } else {
+        THROW_EXCEPTION(NoEnoughMemoryException, "No memory to init DynamicArray object...");
+    }
+}
+```
+
++ `copy`函数
+  + 在堆空间中申请新的内存，并执行拷贝操作
+
+```c++
+T* copy(T* array, int len, int newLen)
+{
+    T* ret = new T[newLen];
+
+    if (ret != nullptr){
+        int size = (len < newLen ? len : newLen);
+
+        for (int i = 0; i < size; ++i) {
+            ret[i] = array[i];
+        }
+    }
+    return ret;
+}
+```
+
++ `update`函数
+  + 将指定的堆空间作为内部存储数组使用
+
+```c++
+void update(T* array, int length)
+{
+    if(array != nullptr)
+    {
+        T* temp = this->m_array;
+
+        this->m_array = array;
+        this->m_length = length;
+
+        delete [] temp;
+    } else {
+        THROW_EXCEPTION(NullPointerException,"This is a nullptr...");
+    }
+}
+```
+
 
 
 

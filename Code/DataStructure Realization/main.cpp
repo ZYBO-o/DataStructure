@@ -2,6 +2,7 @@
 #include "HeadCodes/SmartPointer.h"
 #include "HeadCodes/Exception.h"
 #include "HeadCodes/DynamicArray.h"
+#include "HeadCodes/DynamicList.h"
 
 
 
@@ -12,21 +13,24 @@ using namespace DataStructure;
 
 int main() {
 
-    DynamicArray<int> Dy(5);
+    DynamicArray<int> s1(5);
 
-    for (int i = 0; i < Dy.length(); ++i) {
-        Dy[i] = i * i;
+    for (int i = 0; i < s1.length(); ++i) {
+        s1[i] = (i * i);
     }
 
-    for (int j = 0; j < Dy.length(); ++j) {
-        cout << Dy[j] << endl;
-    }
+
+
+    DynamicArray<int> s2(10) ;
+
+
+
+    cout << s2.length() << endl;
 
 
 
 
 }
-
 
 
 

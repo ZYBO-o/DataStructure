@@ -14,65 +14,66 @@ namespace DataStructure
     {
     protected:
         int m_length;
-    public:
-        DynamicArray()
+
+        T* copy(T* array, int len, int newLen)
         {
-            DynamicArray(0);
+            T* ret = new T[newLen];
+
+            if (ret != nullptr){
+                int size = (len < newLen ? len : newLen);
+
+                for (int i = 0; i < size; ++i) {
+                    ret[i] = array[i];
+                }
+            }
+            return ret;
         }
+
+        void update(T* array, int length)
+        {
+            if(array != nullptr)
+            {
+                T* temp = this->m_array;
+
+                this->m_array = array;
+                this->m_length = length;
+
+                delete [] temp;
+            } else {
+                THROW_EXCEPTION(NullPointerException,"This is a nullptr...");
+            }
+        }
+
+        void init(T* array, int length)
+        {
+            if(array != nullptr)
+            {
+                this->m_array = array;
+                this->m_length = length;
+            } else {
+                THROW_EXCEPTION(NoEnoughMemoryException, "No memory to init DynamicArray object...");
+            }
+        }
+
+    public:
 
         DynamicArray(int length)
         {
-            this->m_array = new T[length];
-
-            if(this->m_array != nullptr){
-
-                this->m_length = length;
-
-            } else {
-                THROW_EXCEPTION(NoEnoughMemoryException, "No memory to create DynamicArray object...");
-            }
+            init(new T[length], length);
         }
 
         DynamicArray(const DynamicArray<T>& obj)
         {
-            this->m_array = new T[obj.m_length];
-
-            if(this->m_array != nullptr){
-
-                this->m_length = obj.m_length;
-
-                for (int i = 0; i < obj.m_length; ++i) {
-                    this->m_array[i] = obj.m_array[i];
-                }
-
-            } else {
-                THROW_EXCEPTION(NoEnoughMemoryException, "No memory to create DynamicArray object...");
-            }
-
+            init(copy(obj.m_array,obj.m_length,obj.m_length),obj.m_length);
         }
 
         DynamicArray<T>& operator = (const DynamicArray<T>& obj)
         {
             if(this != &obj)
             {
-                T* array = new T(obj.m_length);
-
-                if(array != nullptr)
-                {
-                    for (int i = 0; i < obj.length(); ++i) {
-                        array[i] = obj.m_array[i];
-                    }
-
-                    T* temp = this->m_array;
-
-                    this->m_array = array;
-                    this->m_length = obj.m_length;
-
-                    delete [] temp;
-                } else {
-                    THROW_EXCEPTION(NoEnoughMemoryException,"No memory to copy DynamicArray object...");
-                }
+               update(copy(obj.m_array,obj.m_length, obj.m_length),obj.m_length);
             }
+            return *this;
         }
 
         int length() const
@@ -84,29 +85,7 @@ namespace DataStructure
         {
              if(length != m_length)
              {
-                 T* array = new T[length];
-
-                 if(array != nullptr)
-                 {
-                     int size = (length < m_length ? length : m_length);
-
-                     for (int i = 0; i < size; ++i) {
-                         array[i] = this->m_array[i];
-                     }
-
-                     T* temp = this->m_array;
-
-                     this->m_array = array;
-                     this->m_length = m_length;
-
-                     delete [] temp;
-
-
-
-                 } else {
-                     THROW_EXCEPTION(NoEnoughMemoryException,"No memory to resize DynamicArray object...");
-                 }
-
+                 update(copy(this->m_array,m_length, length),length);
              }
         }
 
