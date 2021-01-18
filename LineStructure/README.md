@@ -14,9 +14,7 @@
 
 ---
 
-## 一.线性表的操作
-
-### 1.线性表的常见操作
+## 线性表的操作
 
 + 将元素插入线性表
 + 将元素从线性表中删除
@@ -41,13 +39,19 @@ public:
 };
 ```
 
-### 2.线性表的顺序存储结构
+### 
+
+---
+
+## 一.顺序表的操作
+
+### 1.顺序存储结构
 
 用一段地址连续的存储单元依次存储线性表中的数据元素。
 
 <img src="../images/3.png" style="zoom:30%;" />
 
-#### 设计思路：
+#### (1).设计思路：
 
 + 用一维数组来实现顺序存储结构
   + 存储空间：`T *m_array`
@@ -65,7 +69,7 @@ public:
   + 将插入位置之后的所有元素向前移动一个位置
   + 线性表长度减1
 
-#### 抽象实现
+#### (2).抽象实现
 
 顺序结构表的抽象实现，结构图如下所示：
 
@@ -106,9 +110,9 @@ public:
 };
 ```
 
-### 3.StaticList和DynamicList
+### 2.StaticList和DynamicList
 
-#### StaticList设计要点
+#### (1.)StaticList设计要点
 
 类模板设计：
 
@@ -129,7 +133,7 @@ public:
 };
 ```
 
-#### DynamicList设计要点
+#### (2.)DynamicList设计要点
 
 类模板设计：
 
@@ -158,7 +162,7 @@ public:
 };
 ```
 
-#### 设计优化
+#### (3).设计优化
 
 对于容器类型的类，可以考虑禁止拷贝构造和赋值操作。
 
@@ -225,11 +229,9 @@ void func{
 
 最重要的是`func`函数调用结束之后，`d2`与`d1`调用的析构函数删除的是同一片堆空间，即删除两次，会产生错误。
 
+### 3.数组类
 
-
-### 4.数组类
-
-#### 创建原因
+#### (1).创建原因
 
 线性表功能方面的缺陷：
 
@@ -238,14 +240,14 @@ void func{
 
 所以来创建数组类弥补这些缺陷
 
-#### 需求分析
+#### (2).需求分析
 
 创建数组类代替原生数组的使用
 
 + 包含长度信息
 + 能够主动发现越界访问
 
-#### Array类设计要点
+#### (3).Array类设计要点
 
 具体设计要点：
 
@@ -253,6 +255,8 @@ void func{
 + 重载数组操作符，判断下标是否合法
 + 提供数组长度的抽象访问函数
 + 提供数组对象间的复制操作
+
+[代码链接](https://github.com/ZYBO-o/DataStructure/blob/main/Code/DataStructure%20Realization/HeadCodes/Array.h)
 
 ```c++
 template <typename T>
@@ -272,13 +276,11 @@ public:
 };
 ```
 
-
-
-### 5.StaticArray和DynamicArray
+### 4.StaticArray和DynamicArray
 
 <img src="../images/5.png" style="zoom:50%;" />
 
-#### StaticArray设计要点
+#### (1).StaticArray设计要点
 
 类模板设计：
 
@@ -286,6 +288,8 @@ public:
 + 是用模板参数决定数组大小
 + 实现函数返回数组长度
 + **拷贝构造** 和 **赋值操作**
+
+[代码链接](https://github.com/ZYBO-o/DataStructure/blob/main/Code/DataStructure%20Realization/HeadCodes/StaticArray.h)
 
 ```c++
 template <typename T, int N>
@@ -300,9 +304,7 @@ public:
 };
 ```
 
-
-
-#### DynamicArray设计要点
+#### (2).DynamicArray设计要点
 
 StaticArray的限制：
 
@@ -313,6 +315,8 @@ StaticArray的限制：
 + **动态确定** 内部数组空间的大小
 + 实现函数返回数组长度
 + **拷贝构造** 和 **赋值操作**
+
+[代码链接](https://github.com/ZYBO-o/DataStructure/blob/main/Code/DataStructure%20Realization/HeadCodes/DynamicArray.h)
 
 ```c++
 template <typename T>
@@ -331,8 +335,6 @@ public:
     ~DynamicArray();
 };
 ```
-
-
 
 #### 代码优化
 
@@ -393,9 +395,51 @@ void update(T* array, int length)
 }
 ```
 
+---
 
+## 二.单链表的操作
 
+### 1.链式存储结构
 
+为了表示每个数据元素与其后继元素之间的逻辑关系；数据元素除了存储本身的信息之外，还需要存储其直接后继的信息。
+
+<img src="../images/6.png" style="zoom:40%;" />
+
+#### (1).设计思路：
+
+基于链式存储结构的线性表中，每个结点都包含数据域和指针域。
+
++ 数据域：存储数据本身
++ 指针域：存储相邻结点的地址
+
+#### (2).基本概念：
+
+链表中的基本概念：
+
++ **头结点**
+  + 链表中的辅助结点，只包含指向第一个数据元素的指针
++ **数据结点**
+  + 链表中代表数据元素的结点，表现形式为：(数据元素，地址)
++ **尾结点**
+  + 链表中的最后一个数据结点，包含的地址信息为空
+
+链表的基本操作：
+
++ **在目标位置处插入数据元素**
+
+  + 从头节点开始，通过`current`指针定位到目标位置
+  + 从堆空间中申请新的`Node`结点
+  + 执行插入操作
+
+  <img src="../images/7.png" style="zoom:40%;" />
+
++ **在目标位置处删除数据元素**
+
+  + 从头节点开始，通过`current`指针定位到目标位置
+  + 使用`toDel`指针指向需要删除的节点
+  + 执行删除操作
+
+  <img src="../images/8.png" style="zoom:40%;" />
 
 
 
