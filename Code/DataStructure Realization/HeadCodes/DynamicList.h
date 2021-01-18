@@ -22,20 +22,15 @@ namespace DataStructure
         {
             this->m_array = new T[capacity];
 
-            try {
-                if (this->m_array != nullptr) {
+            if (this->m_array != nullptr) {
 
-                    this->m_length = 0;
-                    this->m_capacity = capacity;
+                this->m_length = 0;
+                this->m_capacity = capacity;
 
-                } else {
+            } else {
 
-                    THROW_EXCEPTION(NoEnoughMemoryException,"No memory to create DynamicList object ...");
+                THROW_EXCEPTION(NoEnoughMemoryException,"No memory to create DynamicList object ...");
 
-                }
-            }catch(NoEnoughMemoryException e) {
-                std::cout << e.message() << std::endl;
-                std::cout << e.location() << std::endl;
             }
 
         }
@@ -50,34 +45,28 @@ namespace DataStructure
             {
                 T* array = new T[capacity];
 
-                try{
-                    if(array != nullptr){
+                if(array != nullptr){
 
-                        int length = (this->m_length < capacity ? this->m_length : capacity);
+                    int length = (this->m_length < capacity ? this->m_length : capacity);
 
-                        for (int i = 0; i < length; ++i) {
-                            array[i] = this->m_array[i];
-                        }
-
-                        //临时变量指向堆空间
-                        T* temp = this->m_array;
-
-                        this->m_array = array;
-                        this->m_length = length;
-                        this->m_capacity = capacity;
-
-                        //删除的是堆空间，还得再思考动态内存的内容
-                        delete temp;
-
-
-                    } else {
-
-                        THROW_EXCEPTION(NoEnoughMemoryException,"No memory to resize DynamicList object ...");
+                    for (int i = 0; i < length; ++i) {
+                        array[i] = this->m_array[i];
                     }
-                } catch (NoEnoughMemoryException e)
-                {
-                    std::cout << e.message() << std::endl;
-                    std::cout << e.location() << std::endl;
+
+                    //临时变量指向堆空间
+                    T* temp = this->m_array;
+
+                    this->m_array = array;
+                    this->m_length = length;
+                    this->m_capacity = capacity;
+
+                    //删除的是堆空间，还得再思考动态内存的内容
+                    delete temp;
+
+
+                } else {
+
+                    THROW_EXCEPTION(NoEnoughMemoryException,"No memory to resize DynamicList object ...");
                 }
             }
         }

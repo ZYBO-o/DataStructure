@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Array.h">
+			<Option target="DataStructure_Realization"/>
+		</Unit>
+		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/DynamicArray.h">
+			<Option target="DataStructure_Realization"/>
+		</Unit>
 		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/DynamicList.h">
 			<Option target="DataStructure_Realization"/>
 		</Unit>
@@ -96,6 +102,9 @@
 			<Option target="DataStructure_Realization"/>
 		</Unit>
 		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/SmartPointer.h">
+			<Option target="DataStructure_Realization"/>
+		</Unit>
+		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/StaticArray.h">
 			<Option target="DataStructure_Realization"/>
 		</Unit>
 		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/StaticList.h">

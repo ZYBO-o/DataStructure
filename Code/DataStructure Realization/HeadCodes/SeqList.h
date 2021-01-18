@@ -92,18 +92,11 @@ namespace DataStructure
         {
             bool ret = ((0 <= i) && (i <= m_length));
 
-            try {
-                if(ret) {
-                    return m_array[i];
-                } else {
-                    // THROW_EXCEPTION(IndexOutOfBoundsException,"Parameter i is invalid");
-                    throw (InvalidOperationException("Parameter i is invalid" ,__FILE_NAME__,__LINE__));
-                }
-            }
-            catch(InvalidOperationException e)
-            {
-                std::cout << e.message() << std::endl;
-                std::cout << e.location() << std::endl;
+            if(ret) {
+                return m_array[i];
+            } else {
+                // THROW_EXCEPTION(IndexOutOfBoundsException,"Parameter i is invalid");
+                throw (InvalidOperationException("Parameter i is invalid" ,__FILE_NAME__,__LINE__));
             }
 
         }

@@ -224,3 +224,127 @@ void func{
 以上操作中 `DynamicList<int > d2 = d1;`会使得`d2`中的`m_array`指向`d1`中的`m_array`。所以两个插入操作其实是对一片堆空间进行操作。
 
 最重要的是`func`函数调用结束之后，`d2`与`d1`调用的析构函数删除的是同一片堆空间，即删除两次，会产生错误。
+
+
+
+### 4.数组类
+
+#### 创建原因
+
+线性表功能方面的缺陷：
+
++ 有可能因为惯性思维，会导致错误的使用数组操作符来进行赋值操作。
++ 在有些场合，基于顺序结构的线性表会有效率的缺陷。
+
+所以来创建数组类弥补这些缺陷
+
+#### 需求分析
+
+创建数组类代替原生数组的使用
+
++ 包含长度信息
++ 能够主动发现越界访问
+
+#### Array类设计要点
+
+具体设计要点：
+
++ 是抽象模板类，存储空间的位置和大小由子类完成
++ 重载数组操作符，判断下标是否合法
++ 提供数组长度的抽象访问函数
++ 提供数组对象间的复制操作
+
+```c++
+template <typename T>
+class Array : public Object
+{
+protected:
+    T* m_array;
+public:
+    virtual bool set(int i, const T& e);
+    virtual bool get(int i, T& e);
+
+    T& operator [] (int i);
+    T operator [] (int i) const;
+  
+    virtual int length() const = 0;
+
+};
+```
+
+
+
+### 5.StaticArray和DynamicArray
+
+<img src="../images/5.png" style="zoom:50%;" />
+
+#### StaticArray设计要点
+
+类模板设计：
+
++ 封装 **原生数组**
++ 是用模板参数决定数组大小
++ 实现函数返回数组长度
++ **拷贝构造** 和 **赋值操作**
+
+```c++
+template <typename T, int N>
+class StaticArray : public Array<T>
+{
+protected:
+    T m_space[N];
+public:
+    StaticArray();
+    StaticArray(const StaticArray<T,N>& obj);
+    StaticArray<T,N>& operator = (const StaticArray<T,N>& obj);
+};
+```
+
+
+
+#### DynamicArray设计要点
+
+StaticArray的限制：
+
++ 创建数组类时必须明确指定数组的大小
+
+类模板设计：
+
++ **动态确定** 内部数组空间的大小
++ 实现函数返回数组长度
++ **拷贝构造** 和 **赋值操作**
+
+```c++
+template <typename T>
+class DynamicArray : public Array<T> {
+protected:
+    int m_length;
+public:
+    DynamicArray(int length);
+
+    DynamicArray(const DynamicArray<T> &obj);
+    DynamicArray<T> &operator=(const DynamicArray<T> &obj);
+
+    int length() const;
+    void resize(int length);
+
+    ~DynamicArray();
+};
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
