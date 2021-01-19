@@ -14,7 +14,7 @@ namespace DataStructure
     {
         // 因为不知道message具体的内存地址在何处，直接指向会有危险性
         // 将字符串内容复制到堆空间中，然后m_message指向堆空间
-        m_message = strdup(message);
+        m_message = (message ? strdup(message) : nullptr);
 
         if (file != nullptr) {
             //行号转换为字符串

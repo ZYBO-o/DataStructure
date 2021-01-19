@@ -57,7 +57,7 @@ namespace DataStructure
 
     public:
 
-        DynamicArray(int length)
+        DynamicArray(int length = 0)
         {
             init(new T[length], length);
         }

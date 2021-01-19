@@ -106,11 +106,19 @@ namespace DataStructure
                 Node* current = position(i);
 
                 Node* toDel = current->next;
+
+                if(m_current == toDel)
+                {
+                    current = toDel->next;
+                }
+
                 current->next = toDel->next;
+
+                m_length--;
 
                 destroy(toDel);
 
-                m_length--;
+
             }
             return ret;
         }
@@ -232,13 +240,16 @@ namespace DataStructure
 
                 m_header.next = toDel->next;
 
+                m_length --;
+
                 destroy(toDel);
             }
-            m_length = 0;
+
         }
 
         ~LinkList()
         {
+            //不会发生多态
             clear();
         }
     };

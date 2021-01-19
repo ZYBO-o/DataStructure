@@ -54,6 +54,7 @@ namespace DataStructure
                 {
                     m_used[i] = 0;
                     psn->~SNode();
+                    break;
                 }
             }
         }
@@ -69,6 +70,11 @@ namespace DataStructure
         int capacity()
         {
             return N;
+        }
+
+        ~StaticLinkList()
+        {
+            this->clear();
         }
     };
 }

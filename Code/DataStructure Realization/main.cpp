@@ -18,17 +18,20 @@ using namespace DataStructure;
 
 int main() {
 
-    //StaticLinkList<int,5> list;
-    DynamicList<int> list(10);
+    StaticLinkList<int,5> list;
+   // DynamicList<int> list(10);
 
 
-    for (int i = 0; i < 5; ++i) {
-        list.insert(i);
+
+
+    for (int i = 0; i < list.capacity() ; ++i) {
+        list.insert(i + 1);
     }
 
-//    for (list.move(0,1); !list.end(); list.next()) {
-//        cout << list.current() << endl;
-//    }
+
+    for (list.move(0,1); !list.end(); list.next()) {
+        cout << list.current() << endl;
+    }
 
 
 
@@ -36,7 +39,6 @@ int main() {
 
 
 }
-
 
 
 
