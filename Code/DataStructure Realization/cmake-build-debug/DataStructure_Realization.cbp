@@ -92,6 +92,9 @@
 		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Exception.h">
 			<Option target="DataStructure_Realization"/>
 		</Unit>
+		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LinkList.h">
+			<Option target="DataStructure_Realization"/>
+		</Unit>
 		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/List.h">
 			<Option target="DataStructure_Realization"/>
 		</Unit>
@@ -105,6 +108,9 @@
 			<Option target="DataStructure_Realization"/>
 		</Unit>
 		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/StaticArray.h">
+			<Option target="DataStructure_Realization"/>
+		</Unit>
+		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/StaticLinkList.h">
 			<Option target="DataStructure_Realization"/>
 		</Unit>
 		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/StaticList.h">

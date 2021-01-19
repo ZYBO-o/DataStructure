@@ -4,11 +4,23 @@
 
 * [线性结构](#C++工具准备)
 
-  * [一、顺序存储]()
+  * [一、顺序存储结构](#一顺序存储结构)
 
-  * [二、数组]()
+  * [二、单链表操作](#二单链表操作)
 
-  * [三、链式存储]()
+  * [三、再论智能指针]()
+
+  * [四、循环链表]()
+
+  * [五、双向链表]()
+
+  * [六、Linux内核链表]()
+
+  * [七、双向循环链表]()
+
+  * [八、栈]()
+
+  * [九、队列]()
 
     <!-- GFM-TOC -->
 
@@ -21,6 +33,7 @@
 + 获取目标位置处元素的值
 + 设置目标位置处元素的值
 + 获取线性表的长度
++ 寻找线性表元素的位置
 + 清空线性表
 
 创建抽象类，为之后的实现做准备。
@@ -34,6 +47,7 @@ public:
     virtual bool remove(int i) = 0;
     virtual bool get(int i, const T& e) = 0;
     virtual bool set(int i, T& e) const = 0;
+  	virtual int find(const T& e) const = 0;
     virtual int length() const =0;
     virtual void clear() = 0;
 };
@@ -95,6 +109,7 @@ public:
     bool remove(int i);
     bool set(int i, const T& e);
     bool get(int i, T& e) const;
+  	int find(const T& e) const;
     int length() const;
     void clear();
 
@@ -405,14 +420,14 @@ void update(T* array, int length)
 
 <img src="../images/6.png" style="zoom:40%;" />
 
-#### (1).设计思路：
+#### (1).设计思路
 
 基于链式存储结构的线性表中，每个结点都包含数据域和指针域。
 
 + 数据域：存储数据本身
 + 指针域：存储相邻结点的地址
 
-#### (2).基本概念：
+#### (2).基本概念
 
 链表中的基本概念：
 
@@ -443,7 +458,220 @@ void update(T* array, int length)
 
 
 
+#### (3).具体实现
 
+LinkList设计要点：
+
++ 类模板，**通过头结点访问后继元素**
++ 定义内部结点Node，用于描述数据域和指针域
++ 实现线性表的 **关键操作** (增，删，查，等)
+
+[代码链接](https://github.com/ZYBO-o/DataStructure/blob/main/Code/DataStructure%20Realization/HeadCodes/LinkList.h)
+
+```c++
+template <typename T>
+class LinkList : public List<T>
+{
+protected:
+    struct Node : public Object
+    {
+        T value;
+        Node* next;
+    };
+    //防止创建头结点的时候调用构造函数
+    mutable struct : public Object {
+        char reserved[sizeof(T)];
+        Node* next;
+    } m_header;
+    int m_length;
+public:
+    LinkList();
+
+    bool insert(const T& e);
+    bool insert(int i, const T& e);
+    bool remove(int i);
+    bool set(int i, const T& e);
+    bool get(int i) const;
+    bool get(int i, T& e) const;
+    int length() const;
+    void clear();
+    ~LinkList();
+};
+```
+
+
+
+### 2.单链表的遍历和优化
+
+#### (1).设计思路
+
++ 在单链表的内部定义一个**游标** (Node *m_current)
++ 遍历开始前将游标指向位置为0的数据元素
++ 获取游标指向的数据元素
++ 通过结点中的`next`指针移动游标
+
+提供一组遍历相关的函数，以线性的时间复杂度遍历链表。
+
+| 函数      | 功能说明                    |
+| --------- | --------------------------- |
+| move()    | 将游标定位到目标位置        |
+| next()    | 移动游标                    |
+| current() | 获取游标指向的数据元素      |
+| end()     | 游标是否到达尾部 (是否为空) |
+
+#### (2).实现目标
+
++ 单链表的遍历在线性时间内完成
++ 在单链表内部定义游标变量，通过游标变量提高效率
++ 遍历相关的成员函数时相互依赖，相互配合的关系
++ 封装结点的申请和删除操作更有利于增强扩展性
+
+#### (3).具体实现
+
+类变量修改与添加：
+
+```c++
+template <typename T>
+class LinkList : public List<T>
+{
+protected:
+    struct Node : public Object
+    {
+        T value;
+        Node* next;
+    };
+
+    //防止创建头结点的时候调用构造函数
+    mutable struct : public Object {
+        char reserved[sizeof(T)];
+        Node* next;
+    } m_header;
+
+
+    int m_length;
+
+    //添加有关游标
+    Node* m_current;
+    //游标每次移动的数目
+    int m_step;
+
+    //定位函数
+    Node* position (int i) const
+    {
+        Node* current = reinterpret_cast<Node*>(&m_header);
+
+        for (int j = 0; j < i; ++j) {
+            current = current->next;
+        }
+
+        return current;
+    }
+
+    //进行进一步封装
+    virtual Node* create()
+    {
+        return new Node();
+    }
+
+    virtual void destory(Node* pn)
+    {
+        delete pn;
+    }
+public:
+  ...
+};
+```
+
+函数实现：
+
+```c++
+//将游标定位到目标位置
+bool move(int i, int step = 1)
+{
+    bool ret = (0 <= i) && (i < m_length) && (step > 0);
+    if(ret)
+    {
+        m_current = position(i)->next;
+        m_step = step;
+    }
+    return ret;
+}
+
+//游标是否到达尾部 (是否为空)
+bool end()
+{
+    return (m_current == nullptr);
+}
+
+//获取游标指向的数据元素
+T current()
+{
+    if(!end())
+    {
+        return m_current->value;
+    } else {
+        THROW_EXCEPTION(InvalidOperationException,"No value at current position ...");
+    }
+}
+
+//移动游标
+bool next()
+{
+    int i = 0;
+    while( (i < m_step) && !end())
+    {
+        m_current = m_current->next;
+        i++;
+    }
+    return (i == m_step);
+}
+```
+
+### 3.静态链表
+
+#### (1).单链表的缺陷
+
++ **触发条件：**
+  + 长时间使用单链表对象频繁增加和删除数据元素
++ **可能的结果：**
+  + 堆空间产生大量的内存碎片，导致系统运行缓慢
+
+#### (2).设计思路
+
+在"单链表"的内部增加一片预留的空间，所有的`Node`对象都在这片空间中动态创建和动态销毁。
+
+<img src="../images/9.png" style="zoom:50%;" />
+
+所以只需要修改`create`和`destory`这两个函数就行了。
+
+#### (3).具体实现
+
+静态链表的实现思路：
+
++ 通过模板定义静态单链表类
++ 在类中定义固定大小的空间
++ 重写`create`和`destory`函数，**改变内存的分配和归还方式**
++ 在`Node`类中重载`operation new`，用于在指定内存上创建对象
+
+
+
+
+
+
+
+---
+
+## 三.
+
+
+
+---
+
+## 四.
+
+
+
+---
 
 
 
