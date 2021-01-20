@@ -5,7 +5,7 @@
 #ifndef DATASTRUCTURE_REALIZATION_EXCEPTION_H
 #define DATASTRUCTURE_REALIZATION_EXCEPTION_H
 
-#include "Object.h"
+#include "../Object/Object.h"
 
 namespace DataStructure
 {

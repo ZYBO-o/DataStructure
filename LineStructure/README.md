@@ -8,7 +8,7 @@
 
   * [二、单链表操作](#二单链表操作)
 
-  * [三、再论智能指针]()
+  * [三、再论智能指针](#三再论智能指针)
 
   * [四、循环链表]()
 
@@ -712,13 +712,126 @@ public:
 
 
 
-
-
-
-
 ---
 
-## 三.
+## 三.再论智能指针
+
+### 1.替代原生指针
+
+#### (1).问题所在
+
+使用智能指针代替单链表中的原生指针的问题：
+
+SmartPointer设计方案中有：**<font color = red>一片堆空间最多只能由一个指针标识。</font>**但是遍历时有多个指针指向堆空间，与设计相悖，所以需要重新设计。
+
+### 2.重新设计
+
+#### (1).新的设计方案
+
+<img src="../images/10.png" style="zoom:50%;" />
+
+`Pointer`是`Object`的直接子类，也是两个智能指针的父类。
+
+`SharePointer`支持多个指针指向同一片堆空间，也支持自动释放堆空间。
+
+#### (2).Pointer设计
+
+`Pointer`是智能指针的抽象父类(模板)
+
++ 纯虚函数`virtual ~Pointer() = 0`
++ 重载`operation -> ()`
++ 重载`operation * ()`
+
+[代码链接](https://github.com/ZYBO-o/DataStructure/blob/main/Code/DataStructure%20Realization/HeadCodes/SmartPointer/Pointer.h)
+
+```c++
+template <typename T>
+class Pointer : public Object
+{
+protected:
+    T* m_pointer;
+public:
+    Pointer(T* p = nullptr);
+    T* operator -> ();
+    T& operator * ();
+    bool IsNull();
+    T* get();
+};
+```
+
+#### (3).SmartPointer修改
+
+[代码链接](https://github.com/ZYBO-o/DataStructure/blob/main/Code/DataStructure%20Realization/HeadCodes/SmartPointer/SmartPointer.h)
+
+```c++
+template <typename T>
+class SmartPointer : public Pointer<T>
+{
+public:
+    //构造函数
+    SmartPointer(T * p = nullptr) : Pointer<T>(p);
+    //拷贝函数
+    SmartPointer(const SmartPointer<T>& obj);
+    //重载 = 运算符
+    SmartPointer<T>& operator = (const SmartPointer<T>& obj);
+    ~SmartPointer();
+```
+
+### 3.sharedPointer设计
+
+#### (1).设计要点
+
+`SharedPointer`设计要点：
+
++ 也是类模板
+
+  + 通过 **计数机制(ref)** 标识堆内存
+    +  堆内存被指向时：`ref++`
+    + 指针被置空时：`ref--`
+    + `ref == 0`时，释放堆内存
+
++ 计数机制原理：
+
+  <img src="../images/11.png" style="zoom:28%;" />
+
+  + 堆空间中每一个对象都有一个计数变量相关联，计数变量也是在堆空间创建的，与堆空间的生命周期也相同
+  + 计数变量表示指向的指针数目
+
++ 由于`SharedPointer`支持多个对象同时指向一篇堆内存，所以 **必须支持比较操作**
+
+#### (2).具体实现
+
+[代码链接](https://github.com/ZYBO-o/DataStructure/blob/main/Code/DataStructure%20Realization/HeadCodes/SmartPointer/SharedPointer.h)
+
+```c++
+template <typename T>
+class SharedPointer :  public Pointer<T>
+{
+protected:
+  	//计数机制成员指针
+    int* m_ref;
+
+public:
+    SharedPointer(T* p = nullptr);
+    SharedPointer(const  SharedPointer<T>&  obj);
+    SharedPointer<T>& operator = (const SharedPointer<T>&  obj);
+  	//将当前指针置为空
+    void clear();
+    ~SharedPointer();
+};
+```
+
+
+
+### 3.注意事项
+
+使用智能指针的注意事项：
+
++ 只能用指向堆空间中的单个变量(对象)
++ 不同类型的智能指针对象不能 **混合使用**
++ 不能使用`delete`释放智能指针指向的堆空间
+
+
 
 
 

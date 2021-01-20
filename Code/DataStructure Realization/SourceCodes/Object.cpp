@@ -2,7 +2,7 @@
 // Created by 张永斌 on 2021/1/16.
 //
 
-#include "../HeadCodes/Object.h"
+#include "../HeadCodes/Object/Object.h"
 #include <iostream>
 #include <cstdlib>
 

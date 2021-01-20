@@ -6,7 +6,7 @@
 #define DATASTRUCTURE_REALIZATION_SEQLIST_H
 
 #include "List.h"
-#include "Exception.h"
+#include "../Exception/Exception.h"
 
 namespace DataStructure
 {

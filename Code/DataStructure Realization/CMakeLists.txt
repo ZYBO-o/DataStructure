@@ -3,4 +3,4 @@ project(DataStructure_Realization)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(DataStructure_Realization main.cpp HeadCodes/Object.h HeadCodes/Exception.h SourceCodes/Exception.cpp HeadCodes/SmartPointer.h SourceCodes/Object.cpp HeadCodes/List.h HeadCodes/SeqList.h HeadCodes/StaticList.h HeadCodes/DynamicList.h HeadCodes/Array.h HeadCodes/StaticArray.h HeadCodes/DynamicArray.h HeadCodes/LinkList.h HeadCodes/StaticLinkList.h)
+add_executable(DataStructure_Realization main.cpp HeadCodes/Object/Object.h HeadCodes/Exception/Exception.h SourceCodes/Exception.cpp HeadCodes/SmartPointer/SmartPointer.h SourceCodes/Object.cpp HeadCodes/LineStructure/List.h HeadCodes/LineStructure/SeqList.h HeadCodes/LineStructure/StaticList.h HeadCodes/LineStructure/DynamicList.h HeadCodes/LineStructure/Array.h HeadCodes/LineStructure/StaticArray.h HeadCodes/LineStructure/DynamicArray.h HeadCodes/LineStructure/LinkList.h HeadCodes/LineStructure/StaticLinkList.h HeadCodes/SmartPointer/Pointer.h HeadCodes/SmartPointer/SharedPointer.h)

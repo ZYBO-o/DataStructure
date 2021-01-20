@@ -5,26 +5,24 @@
 #ifndef DATASTRUCTURE_REALIZATION_SMARTPOINTER_H
 #define DATASTRUCTURE_REALIZATION_SMARTPOINTER_H
 
-#include "Object.h"
+#include "Pointer.h"
 
 namespace DataStructure
 {
     template <typename T>
-    class SmartPointer : public Object
+    class SmartPointer : public Pointer<T>
     {
-    protected:
-        T* m_pointer;
     public:
         //构造函数
-        SmartPointer(T * p = nullptr)
+        SmartPointer(T * p = nullptr) : Pointer<T>(p)
         {
-            m_pointer = p;
+
         }
 
         //拷贝函数
         SmartPointer(const SmartPointer<T>& obj)
         {
-            m_pointer = obj.m_pointer;
+            this->m_pointer = obj.m_pointer;
             const_cast<SmartPointer<T>&>(obj).m_pointer = nullptr;
         }
 
@@ -35,41 +33,22 @@ namespace DataStructure
             if (this != &obj)
             {
                 //先释放成员指针指向的堆空间
-                delete m_pointer;
+                T* p = this->m_pointer;
 
-                m_pointer = obj.m_pointer;
+                this->m_pointer = obj.m_pointer;
+
                 const_cast<SmartPointer<T>&>(obj).m_pointer = nullptr;
+
+                delete p;
             }
             //*this是为了支持连续的赋值
             return *this;
         }
 
-        //重载 * 运算符
-        T& operator * ()
-        {
-            return *m_pointer;
-        }
-
-        //重载 -> 运算符
-        T* operator -> ()
-        {
-            return m_pointer;
-        }
-
-        //查看是否为空
-        bool IsNull()
-        {
-            return (m_pointer == nullptr);
-        }
-
-        T* get()
-        {
-            return m_pointer;
-        }
 
         ~SmartPointer()
         {
-            delete m_pointer;
+            delete this->m_pointer;
         }
 
 

@@ -5,8 +5,8 @@
 #ifndef DATASTRUCTURE_REALIZATION_ARRAY_H
 #define DATASTRUCTURE_REALIZATION_ARRAY_H
 
-#include "Object.h"
-#include "Exception.h"
+#include "../Object/Object.h"
+#include "../Exception/Exception.h"
 
 
 namespace DataStructure
