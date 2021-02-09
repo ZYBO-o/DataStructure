@@ -33,24 +33,26 @@ public:
 
 int main() {
 
-    SharedPointer<Test> sp0 = new Test();
-    SharedPointer<Test> sp1 = sp0;
-    SharedPointer<Test> sp2 = nullptr;
-
-    sp2 = sp1;
-
-    sp2->value = 100;
-
-    cout << sp0->value << endl;
-    cout << sp1->value << endl;
-    cout << sp2->value << endl;
-
-    sp2.clear();
-
-    cout << (sp0 == sp1) << endl;
 
 
-    return 0;
+//    SharedPointer<Test> sp0 = new Test();
+//    SharedPointer<Test> sp1 = sp0;
+//    SharedPointer<Test> sp2 = nullptr;
+//
+//    sp2 = sp1;
+//
+//    sp2->value = 100;
+//
+//    cout << sp0->value << endl;
+//    cout << sp1->value << endl;
+//    cout << sp2->value << endl;
+//
+//    sp2.clear();
+//
+//    cout << (sp0 == sp1) << endl;
+//
+//
+//    return 0;
 }
 
 

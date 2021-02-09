@@ -31,7 +31,7 @@ namespace DataStructure
 
         void update(T* array, int length)
         {
-            if(array != nullptr)
+            if(array != NULL)
             {
                 T* temp = this->m_array;
 
