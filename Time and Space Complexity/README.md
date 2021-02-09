@@ -40,7 +40,7 @@
 - 线性对数阶O(nlogn)
 
 <div align="center">  
-  <img src="https://github.com/ZYBO-o/C-plus-plus-Series/blob/main/images/43.png"  width="600"/> 
+  <img src="https://github.com/ZYBO-o/DataStructure/blob/main/images/13.png"  width="600"/> 
 </div>
 
 #### O(1)
