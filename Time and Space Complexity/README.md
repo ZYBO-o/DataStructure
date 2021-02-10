@@ -125,23 +125,108 @@ void selectionSort(int arr[],int n){
 
 ![1](../images/12.gif)
 
+```c++
+int binarySearch( int arr[], int n , int target){
+	int l = 0, r = n - 1;
+	while ( l <= r) {
+		int mid = l + (r - l) / 2;
+		if (arr[mid] == target) 
+      return mid;
+		if (arr[mid] > target ) 
+      r = mid - 1;
+		else l = mid + 1;
+	}
+	return -1;
+}
+```
+
+在二分查找法的代码中，通过while循环，成 2 倍数的缩减搜索范围，也就是说需要经过 log2^n 次即可跳出循环。
+
+同样的还有下面两段代码也是 O(logn) 级别的时间复杂度。
+
+```c++
+// 整形转成字符串
+string intToString ( int num ){
+	string s = "";
+	// n 经过几次“除以10”的操作后，等于0
+	while (num ){
+		s += '0' + num%10;
+		num /= 10;
+	}
+	reverse(s)
+	return s;
+}
+ 
+void hello (int n ) {
+	// n 除以几次 2 到 1
+	for ( int sz = 1; sz < n ; sz += sz) 
+		for (int i = 1; i < n; i++)
+			cout<< "Hello,五分钟学算法：）"<< endl;
+}
+```
+
+#### O(nlogn)
+
+将时间复杂度为O(logn)的代码循环N遍的话，那么它的时间复杂度就是 n * O(logn)，也就是了O(nlogn)。
+
+```c++
+void hello (){
+	for( m = 1 ; m < n ; m++){
+		i = 1;
+		while( i < n ){
+			i = i * 2;
+		}
+	}
+}
+```
+
+
+
+### 3.不常见的时间复杂度
+
+下面来分析一波另外几种复杂度： 递归算法的时间复杂度（recursive algorithm time complexity），最好情况时间复杂度（best case time complexity）、最坏情况时间复杂度（worst case time complexity）、平均时间复杂度（average case time complexity）和均摊时间复杂度（amortized time complexity）。
+
+#### 递归算法的时间复杂度
+
+
+
+
+
 
 
 ## 二.空间复杂度分析
 
+一个程序的空间复杂度是指运行完一个程序所需内存的大小。利用程序的空间复杂度，可以对程序的运行所需要的内存多少有个预先估计。一个程序执行时除了需要存储空间和存储本身所使用的指令、常数、变量和输入数据外，还需要一些对数据进行操作的工作单元和存储一些为现实计算所需信息的辅助空间。程序执行时所需存储空间包括以下两部分：
 
+(1) 固定部分，这部分空间的大小与输入/输出的数据的个数多少、数值无关。主要包括指令空间（即代码空间）、数据空间（常量、简单变量）等所占的空间。这部分属于静态空间。
 
+(2) 可变空间，这部分空间的主要包括动态分配的空间，以及递归栈所需的空间等。这部分的空间大小与算法有关。
 
+一个算法所需的存储空间用f(n)表示。S(n)=O(f(n))，其中n为问题的规模，S(n)表示空间复杂度。
 
+**空间复杂度可以理解为除了原始序列大小的内存，在算法过程中用到的额外的存储空间。**
 
+以二叉查找树为例，举例说明二叉排序树的查找性能。
 
+### 1.平衡二叉树
 
+如果二叉树的是以红黑树等平衡二叉树实现的，则 n 个节点的二叉排序树的高度为 log2n+1 ，其查找效率为O(Log2n)，近似于折半查找。
 
+<div align="center">  
+  <img src="https://github.com/ZYBO-o/DataStructure/blob/main/images/i14.png"  width="600"/> 
+</div>
 
+### 2.列表二叉树
 
+如果二叉树退变为列表了，则 n 个节点的高度或者说是长度变为了n，查找效率为O(n)，变成了顺序查找。
 
+<div align="center">  
+  <img src="https://github.com/ZYBO-o/DataStructure/blob/main/images/15.png"  width="600"/> 
+</div>
 
+### 3.一般二叉树
 
+介于「列表二叉树」与「平衡二叉树」之间，查找性能也在O(Log2n)到O(n)之间。
 
 
 
