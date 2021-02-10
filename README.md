@@ -4,7 +4,7 @@
 
 # 一.时间与空间复杂度分析
 
-+ [时间复杂度]()
++ [时间复杂度](https://github.com/ZYBO-o/DataStructure/tree/main/Time%20and%20Space%20Complexity#%E4%B8%80%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90)
 + [空间复杂度]()
 
 ## 二.C++工具准备
