@@ -197,6 +197,33 @@ SourceCodes/Object.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_Realization.dir/build.make CMakeFiles/DataStructure_Realization.dir/SourceCodes/Object.cpp.s
 .PHONY : SourceCodes/Object.cpp.s
 
+SourceCodes/String.o: SourceCodes/String.cpp.o
+
+.PHONY : SourceCodes/String.o
+
+# target to build an object file
+SourceCodes/String.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_Realization.dir/build.make CMakeFiles/DataStructure_Realization.dir/SourceCodes/String.cpp.o
+.PHONY : SourceCodes/String.cpp.o
+
+SourceCodes/String.i: SourceCodes/String.cpp.i
+
+.PHONY : SourceCodes/String.i
+
+# target to preprocess a source file
+SourceCodes/String.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_Realization.dir/build.make CMakeFiles/DataStructure_Realization.dir/SourceCodes/String.cpp.i
+.PHONY : SourceCodes/String.cpp.i
+
+SourceCodes/String.s: SourceCodes/String.cpp.s
+
+.PHONY : SourceCodes/String.s
+
+# target to generate assembly for a file
+SourceCodes/String.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_Realization.dir/build.make CMakeFiles/DataStructure_Realization.dir/SourceCodes/String.cpp.s
+.PHONY : SourceCodes/String.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -239,6 +266,9 @@ help:
 	@echo "... SourceCodes/Object.o"
 	@echo "... SourceCodes/Object.i"
 	@echo "... SourceCodes/Object.s"
+	@echo "... SourceCodes/String.o"
+	@echo "... SourceCodes/String.i"
+	@echo "... SourceCodes/String.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -113,7 +113,13 @@
 		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Object/Object.h">
 			<Option target="DataStructure_Realization"/>
 		</Unit>
-		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Recursion.h">
+		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Recursion/List_Case.h">
+			<Option target="DataStructure_Realization"/>
+		</Unit>
+		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Recursion/Merge_Lists.h">
+			<Option target="DataStructure_Realization"/>
+		</Unit>
+		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Recursion/Recursion_List.h">
 			<Option target="DataStructure_Realization"/>
 		</Unit>
 		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/SmartPointer/Pointer.h">
@@ -128,10 +134,19 @@
 		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Sort/Sort.h">
 			<Option target="DataStructure_Realization"/>
 		</Unit>
+		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/String/String.h">
+			<Option target="DataStructure_Realization"/>
+		</Unit>
 		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/SourceCodes/Exception.cpp">
 			<Option target="DataStructure_Realization"/>
 		</Unit>
 		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/SourceCodes/Object.cpp">
+			<Option target="DataStructure_Realization"/>
+		</Unit>
+		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/SourceCodes/String.cpp">
+			<Option target="DataStructure_Realization"/>
+		</Unit>
+		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/Test/TestString.h">
 			<Option target="DataStructure_Realization"/>
 		</Unit>
 		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/main.cpp">

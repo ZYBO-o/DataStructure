@@ -6,93 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Exception/Exception.h
-../Object/Object.h
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Object/Object.h
 
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/Array.h
-../Object/Object.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Object/Object.h
-../Exception/Exception.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Exception/Exception.h
-
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/DynamicArray.h
-Array.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/Array.h
-
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/DynamicList.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/String/String.h
 iostream
 -
-SeqList.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/SeqList.h
-../Exception/Exception.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Exception/Exception.h
-
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/LinkList.h
-List.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/List.h
-../Exception/Exception.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Exception/Exception.h
-
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/List.h
 ../Object/Object.h
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Object/Object.h
 
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/SeqList.h
-List.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/List.h
-../Exception/Exception.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Exception/Exception.h
-
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/StaticArray.h
-Array.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/Array.h
-
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/StaticLinkList.h
-LinkList.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/LinkList.h
-
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Object/Object.h
-
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/SmartPointer/Pointer.h
-../Object/Object.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Object/Object.h
-
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/SmartPointer/SharedPointer.h
-cstdlib
--
-Pointer.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/SmartPointer/Pointer.h
-../Exception/Exception.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Exception/Exception.h
-
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/SmartPointer/SmartPointer.h
-Pointer.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/SmartPointer/Pointer.h
-
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Sort/Sort.h
-../Object/Object.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Object/Object.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/Test/TestString.h
+../HeadCodes/String/String.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/String/String.h
 
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/main.cpp
-iostream
--
-HeadCodes/SmartPointer/SmartPointer.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/SmartPointer/SmartPointer.h
-HeadCodes/Exception/Exception.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Exception/Exception.h
-HeadCodes/LineStructure/DynamicArray.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/DynamicArray.h
-HeadCodes/LineStructure/StaticArray.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/StaticArray.h
-HeadCodes/LineStructure/StaticLinkList.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/StaticLinkList.h
-HeadCodes/LineStructure/DynamicList.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/DynamicList.h
-HeadCodes/LineStructure/LinkList.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/LinkList.h
-HeadCodes/SmartPointer/SharedPointer.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/SmartPointer/SharedPointer.h
-HeadCodes/Sort/Sort.h
-/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Sort/Sort.h
+Test/TestString.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/Test/TestString.h
 

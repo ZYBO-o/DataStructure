@@ -8,19 +8,13 @@ CMakeFiles/DataStructure_Realization.dir/SourceCodes/Exception.cpp.o
 CMakeFiles/DataStructure_Realization.dir/SourceCodes/Object.cpp.o
  /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Object/Object.h
  /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/SourceCodes/Object.cpp
-CMakeFiles/DataStructure_Realization.dir/main.cpp.o
+CMakeFiles/DataStructure_Realization.dir/SourceCodes/String.cpp.o
  /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Exception/Exception.h
- /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/Array.h
- /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/DynamicArray.h
- /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/DynamicList.h
- /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/LinkList.h
- /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/List.h
- /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/SeqList.h
- /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/StaticArray.h
- /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/StaticLinkList.h
  /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Object/Object.h
- /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/SmartPointer/Pointer.h
- /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/SmartPointer/SharedPointer.h
- /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/SmartPointer/SmartPointer.h
- /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Sort/Sort.h
+ /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/String/String.h
+ /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/SourceCodes/String.cpp
+CMakeFiles/DataStructure_Realization.dir/main.cpp.o
+ /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Object/Object.h
+ /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/String/String.h
+ /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/Test/TestString.h
  /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/main.cpp
