@@ -2,21 +2,21 @@
 
 <!-- GFM-TOC -->
 
-* [字符串类的创建](#C++工具准备)
-  + [历史遗留问题]()
-  + [C++中的字符串类]()
-  + [字符串类的设计]()
-* [字符串类的实现]()
-  + [字符串的创建]()
-  + [字符串常用函数]()
-* [KMP算法]()
-  + [基本原理]()
-  + [实例]()
-  + [部分匹配值]()
-  + [KMP算法实现]()
-* [字符串类的拓展]()
-  + [字符串类的拓展函数]()
-  + [拓展函数的实现]()
+* [字符串类的创建](#一字符串类的创建)
+  + [历史遗留问题](#1历史遗留问题)
+  + [C++中的字符串类](#1历史遗留问题)
+  + [字符串类的设计](#3字符串类的设计)
+* [字符串类的实现](#二字符串类的实现)
+  + [字符串的创建](#1字符串的创建)
+  + [字符串常用函数](#2字符串常用成员函数)
+* [KMP算法](#三kmp算法)
+  + [基本原理](#1基本原理)
+  + [实例](#2实例)
+  + [部分匹配值](#3部分匹配值)
+  + [KMP算法实现](#4部分匹配表的使用kmp算法)
+* [字符串类的拓展](#四字符串类的拓展)
+  + [字符串类的拓展函数](#1字符串类的拓展函数)
+  + [拓展函数的实现](#2拓展函数的实现)
 
 <!-- GFM-TOC -->
 
@@ -41,7 +41,9 @@
 + 继承自Object顶层父类
 + 依赖于C语言函数包
 
-<img src="../images/mystring1.png" style="zoom:32%;" />
+<div align="center">  
+  <img src="https://github.com/ZYBO-o/DataStructure/blob/main/images/mystring1.png"  width="400"/> 
+</div>
 
 > 实现时需要注意的事项：
 >
@@ -57,11 +59,31 @@
 
 ### 1.字符串的创建
 
+```c++
+class String : public Object
+{
+//成员变量
+protected:
+    char* m_str;
+    int m_length;
+    void init(const char* s);
+//构造与析构函数
+public:
+    String();
+    String(char c);
+    String(const char* s);
+    String(const String& s);
+    ~String();
+   };
+```
+
 
 
 ### 2.字符串常用成员函数
 
-<img src="../images/mystring2.png" style="zoom:35%;" />
+<div align="center">  
+  <img src="https://github.com/ZYBO-o/DataStructure/blob/main/images/mystring2.png"  width="500"/> 
+</div>
 
 #### (1).重载[]操作符
 
@@ -92,14 +114,18 @@
   + C字符串：`String& insert(int i, const char* s)`；
   + String对象：`String& insert(int i, const String& s)`;
 
-  <img src="../images/mystring3.png" style="zoom:40%;" />
+  <div align="center">  
+    <img src="https://github.com/ZYBO-o/DataStructure/blob/main/images/mystring3.png"  width="400"/> 
+  </div>
 
 #### (4).去空格操作
 
 + 去掉字符串两端的空格。
   + 函数声明：`String& trim()`;
 
-<img src="../images/mystring4.png" style="zoom:40%;" />
+<div align="center">  
+  <img src="https://github.com/ZYBO-o/DataStructure/blob/main/images/mystring4.png"  width="400"/> 
+</div>
 
 ---
 
@@ -113,7 +139,9 @@
 
 ### 2.实例
 
-<img src="../images/mystring5.png" style="zoom:40%;" />
+<div align="center">  
+  <img src="https://github.com/ZYBO-o/DataStructure/blob/main/images/mystring5.png"  width="600"/> 
+</div>
 
 第7位匹配失败——>前6位匹配成功——>查表PMT[6]——>右移位数6 - PMT[6] = 6 - 2 = 4
 
@@ -130,7 +158,9 @@
 
 #### (2).实例：ABCDABD
 
-<img src="../images/mystring6.png" style="zoom:40%;" />
+<div align="center">  
+  <img src="https://github.com/ZYBO-o/DataStructure/blob/main/images/mystring6.png"  width="600"/> 
+</div>
 
 #### (3).程序表达：
 
@@ -171,7 +201,9 @@
 
 #### (1).实例
 
-<img src="../images/mystring7.png" style="zoom:40%;" />
+<div align="center">  
+  <img src="https://github.com/ZYBO-o/DataStructure/blob/main/images/mystring7.png"  width="500"/> 
+</div>
 
 + 因为 s[i] != p[j]
 + 所以查表， LL = PMT[j-1]
@@ -214,7 +246,9 @@ int KMP(const char* s, const char* p) {
 
 ### 1.字符串类的拓展函数
 
-<img src="../images/mystring8.png" style="zoom:40%;" />
+<div align="center">  
+  <img src="https://github.com/ZYBO-o/DataStructure/blob/main/images/mystring8.png"  width="500"/> 
+</div>
 
 ### 2.拓展函数的实现
 
