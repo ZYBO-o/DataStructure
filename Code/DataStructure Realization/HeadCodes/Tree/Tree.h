@@ -15,9 +15,8 @@ class Tree : public Object {
 protected:
     TreeNode<T>* m_root;
 public:
-    Tree() {
-        m_root = nullptr;
-    }
+    Tree() : m_root(nullptr) {}
+
     virtual bool insert(TreeNode<T>* node) = 0;
     virtual bool insert(const T& value, TreeNode<T>* parent) = 0;
     virtual SharedPointer<Tree<T>> remove(const T& value) = 0;
@@ -28,7 +27,7 @@ public:
     virtual int degree() const = 0;
     virtual int count() const = 0;
     virtual int height() const = 0;
-    virtual void clear() const = 0;
+    virtual void clear() = 0;
 
 };
 }

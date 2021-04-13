@@ -137,6 +137,12 @@
 		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/String/String.h">
 			<Option target="DataStructure_Realization"/>
 		</Unit>
+		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Tree/GTree.h">
+			<Option target="DataStructure_Realization"/>
+		</Unit>
+		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Tree/GTreeNode.h">
+			<Option target="DataStructure_Realization"/>
+		</Unit>
 		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Tree/Tree.h">
 			<Option target="DataStructure_Realization"/>
 		</Unit>
@@ -153,6 +159,9 @@
 			<Option target="DataStructure_Realization"/>
 		</Unit>
 		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/Test/TestString.h">
+			<Option target="DataStructure_Realization"/>
+		</Unit>
+		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/Test/TestTree.h">
 			<Option target="DataStructure_Realization"/>
 		</Unit>
 		<Unit filename="/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/main.cpp">

@@ -15,9 +15,7 @@ public:
     T value;
     TreeNode<T>* parent;
 
-    TreeNode() {
-        parent = nullptr;
-    }
+    TreeNode() : parent(nullptr){}
 
     virtual ~TreeNode() = 0;
 };

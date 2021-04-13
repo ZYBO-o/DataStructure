@@ -41,6 +41,7 @@
   <img src="../images/mystring9.png" style="zoom:40%;" />
 
 + **森林的概念**
+  
   + 森林是由 n(n >= 0) 棵互不相交的树组成的集合
 
 ### 2.树的一些常用操作
@@ -80,7 +81,7 @@
       virtual int degree() const = 0;
       virtual int count() const = 0;
       virtual int height() const = 0;
-      virtual void clear() const = 0;
+      virtual void clear() = 0;
   };
   ```
 
@@ -100,13 +101,66 @@
   };
   ```
 
-  
 
+---
 
+## 二.树的存储结构与实现
 
+### 1.设计要点
 
++ Gtree为通用树结构，每个结点可以存在多个后继结点
++ GtreeNode 能够包含任意多指向后继结点的指针
++ 实现树结构的所有操作 (增删改查等)
 
++ 树和结点的存储结构设计
 
+  <img src="../images/mytree1.png" style="zoom:40%;" />
 
+### 2.设计与实现
 
+#### (1).GTreeNode设计
+
++ **设计框图：**
+
+  <img src="../images/mytree2.png" style="zoom:40%;" />
+
++ **类代码：**
+
+  ```c++
+  template<typename T>
+  class GTreeNode : public TreeNode<T> {
+  public:
+      LinkList<GTreeNode<T>*> child;
+  };
+  ```
+
+#### (2).Gtree设计
+
++ **设计框图：**
+
+  <img src="../images/mytree3.png" style="zoom:40%;" />
+
++ **类代码：**
+
+  ```c++
+  template<typename T>
+  class GTree : public Tree<T> {
+  public:
+      bool insert(TreeNode<T>* node);
+      bool insert(const T& value, TreeNode<T>* parent);
+      SharedPointer<Tree<T>> remove(const T& value);
+      SharedPointer<Tree<T>> remove(TreeNode<T>* node) ;
+      TreeNode<T>* find(const T& value) const;
+      TreeNode<T>* find(TreeNode<T>* node) const;
+      TreeNode<T>* root() const;
+      int degree() const;
+      int count() const;
+      int height() const;
+      void clear();
+  };
+  ```
+
++ **Gtree的实现架构：**
+
+  <img src="../images/mytree4.png" style="zoom:30%;" />
 
