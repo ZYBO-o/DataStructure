@@ -164,3 +164,169 @@
 
   <img src="../images/mytree4.png" style="zoom:30%;" />
 
+## 三.树的操作实现
+
+### 1.树中结点的查找操作
+
++ **查找的方式**
+
+  + 基于数据元素值的查找
+
+    ```C++
+    GTreeNode<T>* find(const T& value) const
+    ```
+
+  + 基于结点的查找
+
+    ```c++
+    GTreeNode<T>* find(TreeNode<T> T* node) const
+    ```
+
++ **基于数据元素值查找的方案**
+
+  + 定义功能：`find (node, value)`
+
+  + 在node为根结点的树中查找value所在的结点
+
+    <img src="../images/mytree5.png" style="zoom:40%;" />
+
++ **基于结点查找的方案**
+
+  + 功能定义：`find(node, obj)`
+
+  + 在node为根结点的树中查找是否存在 obj 结点
+
+    <img src="../images/mytree6.png" style="zoom:40%;" />
+
+### 2.树中结点的插入操作
+
++ **插入的方式**
+
+  + 插入新结点
+
+    ```c++
+    bool insert(Tree<T>* node)
+    ```
+
+  + 插入数据元素
+
+    ```c++
+    bool insert(const T&value, TreeNode<T>* parent)
+    ```
+
++ **问题：**
+
+  + 如何指定新结点在树中的位置？
+
++ **问题分析：**
+
+  + 数是非线性的，无法以下标的形式定位数据元素
+  + 每一个树结点都有唯一的前驱结点(父结点)
+  + 所以插入时必须先找到前驱结点，然后完成新结点的插入
+
++ **插入新结点具体流程：**
+
+  <img src="../images/mytree7.png" style="zoom:40%;" />
+
++ **插入数据元素具体流程：**
+
+  <img src="../images/mytree8.png" style="zoom:50%;" />
+
+### 3.树中结点的清除操作
+
++ **树中结点的清除：**
+
+  + `void clear()`
+    + 将树中所有结点清除(释放堆中的结点)
+
++ **将根结点的所有子树清除，然后清除根结点**
+
+  ![image-20210415121638138](../../../../Library/Application Support/typora-user-images/image-20210415121638138.png)
+
++ **清除操作功能的定义**
+
+  + free(node)
+
+    + 清除 node 为根结点的树
+    + 释放树中每一个结点
+
+    <img src="../images/mytree10.png" style="zoom:40%;" />
+
++ **问题：树中的结点可能来自于不同的存储空间，释放方式不同。**
++ **问题分析：**
+  + 单凭内存地址很难准确判断具体的存储区域
+  + 只有堆空间的内存需要主动释放(delete)
+  + 清除操作时只需要对堆中的结点进行释放
++ **解决方案：工厂模式**
+  + 在 GTreeNode 中增加保护成员变量 m_flag
+  + 将 GTreeNode 中的 operator new 重载为保护成员函数
+  + 提供工厂方法 `GTreeNode<T>* NewNode()`
+  + 在工厂方法的 new 新结点并将 m_flag 设置为 true
+
+### 4.树中结点的删除操作
+
++ **删除的方式：**
+
+  + 基于数据元素值的删除
+
+    `SharedPointer<Tree<T>> remove(const T& value)`
+
+  + 基于结点的删除
+
+    `SharedPointer<Tree<T>> remove(TreeNode<T>* node)`
+
++ **删除操作成员函数的设计要点：**
+
+  + 将被删除结点代表的 **子树进行删除**
+  + 删除函数 **返回一棵堆空间中的树**
+  + 具体返回值为 **指向树的智能指针对象**
+
+  <img src="../images/mytree11.png" style="zoom:40%;" />
+
++ **实用的设计原则**
+
+  + 当需要从函数中返回堆中的对象时，使用智能指针作为函数的返回值。
+
++ **删除操作功能的定义：**
+
+  + `void remove(GTreeNode<T>* node, GTree<T>*& ret)`
+    + 将node为根结点的子树从原来的树中删除
+    + ret作为子树返回(ret 指向堆空间中的树对象)
+
++ **删除功能的实现流程：**
+
+  <img src="../images/mytree12.png" style="zoom:50%;" />
+
+### 5.树中属性操作的实现
+
++ **树中结点的数目：**
+
+  + 定义功能： `count(node)`
+
+    + 在node为根结点的树中统计结点的数目
+
+    <img src="../images/mytree13.png" style="zoom:40%;" />
+
+  + 树结点数目的计算示例：
+
+    <img src="../images/mytree14.png" style="zoom:30%;" />
+
++ **树的高度：**
+
+  + 定义功能：`height(node)`
+
+    + 获取 node 为根结点的树的高度
+
+    <img src="../images/mytree15.png" style="zoom:50%;" />
+
+  + 树的高度计算示例：
+
+    <img src="../images/mytree16.png" style="zoom:30%;" />
+
++ **树的度数：**
+
+  + 定义功能：`degree(node)`
+
+    + 获取 node 为根结点的树的度数
+
+    <img src="../images/mytree17.png" style="zoom:50%;" />
