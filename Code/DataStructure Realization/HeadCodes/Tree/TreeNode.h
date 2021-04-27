@@ -11,11 +11,25 @@ namespace DataStructure {
 
 template <typename T>
 class TreeNode : public Object{
+protected:
+    bool m_flag;//工厂模式
+
+
+    TreeNode(const TreeNode<T>&) ;
+    TreeNode<T>& operator = (const TreeNode<T>&);
+
+    //重载new为保护模式
+    void* operator new (unsigned long size) throw () {
+        return Object::operator new(size);
+    }
+
 public:
     T value;
     TreeNode<T>* parent;
 
-    TreeNode() : parent(nullptr){}
+    TreeNode() : parent(nullptr),  m_flag(false){}
+
+    bool flag () {return m_flag;}
 
     virtual ~TreeNode() = 0;
 };

@@ -10,6 +10,16 @@
 ../Object/Object.h
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Object/Object.h
 
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/Array.h
+../Object/Object.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Object/Object.h
+../Exception/Exception.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Exception/Exception.h
+
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/DynamicArray.h
+Array.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/Array.h
+
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/LinkList.h
 List.h
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/List.h
@@ -21,6 +31,24 @@ List.h
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Object/Object.h
 
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Object/Object.h
+
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Queue/LinkQueue.h
+Queue.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Queue/Queue.h
+../Exception/Exception.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Exception/Exception.h
+../LineStructure/LinkList.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/LinkList.h
+
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Queue/Queue.h
+../Object/Object.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Object/Object.h
+
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Queue/StaticQueue.h
+Queue.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Queue/Queue.h
+../Exception/Exception.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Exception/Exception.h
 
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/SmartPointer/Pointer.h
 ../Object/Object.h
@@ -40,11 +68,29 @@ iostream
 ../Object/Object.h
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Object/Object.h
 
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Tree/BTree.h
+Tree.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Tree/Tree.h
+BTreeNode.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Tree/BTreeNode.h
+../Exception/Exception.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Exception/Exception.h
+../Queue/LinkQueue.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Queue/LinkQueue.h
+../LineStructure/DynamicArray.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/LineStructure/DynamicArray.h
+
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Tree/BTreeNode.h
+TreeNode.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Tree/TreeNode.h
+
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Tree/GTree.h
 Tree.h
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Tree/Tree.h
 GTreeNode.h
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Tree/GTreeNode.h
+../Queue/LinkQueue.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Queue/LinkQueue.h
 
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Tree/GTreeNode.h
 TreeNode.h
@@ -62,6 +108,14 @@ TreeNode.h
 ../Object/Object.h
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Object/Object.h
 
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/Test/TestQueue.h
+iostream
+-
+../HeadCodes/Queue/StaticQueue.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Queue/StaticQueue.h
+../HeadCodes/Queue/LinkQueue.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Queue/LinkQueue.h
+
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/Test/TestString.h
 ../HeadCodes/String/String.h
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/String/String.h
@@ -69,10 +123,14 @@ TreeNode.h
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/Test/TestTree.h
 ../HeadCodes/Tree/GTree.h
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Tree/GTree.h
+../HeadCodes/Tree/BTree.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/HeadCodes/Tree/BTree.h
 
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/main.cpp
 Test/TestString.h
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/Test/TestString.h
 Test/TestTree.h
 /Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/Test/TestTree.h
+Test/TestQueue.h
+/Users/zhangyongbin/Desktop/Github Projects/DateStructure/Code/DataStructure Realization/Test/TestQueue.h
 

@@ -14,16 +14,24 @@ CMakeFiles/DataStructure_Realization.dir/SourceCodes/String.cpp.o: ../HeadCodes/
 CMakeFiles/DataStructure_Realization.dir/SourceCodes/String.cpp.o: ../SourceCodes/String.cpp
 
 CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/Exception/Exception.h
+CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/LineStructure/Array.h
+CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/LineStructure/DynamicArray.h
 CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/LineStructure/LinkList.h
 CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/LineStructure/List.h
 CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/Object/Object.h
+CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/Queue/LinkQueue.h
+CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/Queue/Queue.h
+CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/Queue/StaticQueue.h
 CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/SmartPointer/Pointer.h
 CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/SmartPointer/SharedPointer.h
 CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/String/String.h
+CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/Tree/BTree.h
+CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/Tree/BTreeNode.h
 CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/Tree/GTree.h
 CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/Tree/GTreeNode.h
 CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/Tree/Tree.h
 CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../HeadCodes/Tree/TreeNode.h
+CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../Test/TestQueue.h
 CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../Test/TestString.h
 CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../Test/TestTree.h
 CMakeFiles/DataStructure_Realization.dir/main.cpp.o: ../main.cpp

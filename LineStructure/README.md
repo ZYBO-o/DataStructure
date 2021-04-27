@@ -845,6 +845,129 @@ public:
 
 
 
+## 九.队列
+
+### 1.队列的概念及实现
+
++ **队列是一种特殊的线性表**
++ **队列仅能在线性表的两端进行操作**
+  + 队头： 取出元素操作
+  + 队尾：插入元素操作
++ 队列的特性： **先进先出**
++ 队列的操作：
+  + 创建队列`Queue()`
+  + 销毁队列`~Queue()`
+  + 清空队列`clear()`
+  + 进队列`add()`
+  + 出队列`remove()`
+  + 获取对头元素`front()`
+  + 获取队列长度`length()`
+
+### 2.队列设计方式
+
+<img src="../images/Queue1.png" style="zoom:50%;" />
+
+**Queue父类设计：**
+
+```c++
+template<typename T>
+class Queue : public Object{
+public:
+    virtual void add(const T&e) = 0;
+    virtual void remove() = 0;
+    virtual T front() const = 0;
+    virtual void clear() = 0 ;
+    virtual int length() const = 0;
+};
+```
+
+
+
+### 3.队列的顺序实现
+
+<img src="../images/Queue2.png" style="zoom:30%;" />
+
++ **设计要点：**
+
+  + 使用原生数组作为队列的存储空间
+  + 使用模板参数作为队列的最大容量
+
+  ```c++
+  template<typename T, int N>
+  class StaticQueue : public Queue<T> {
+  protected:
+      T m_space[N];
+      int m_front;
+      int m_rear;
+      int m_length;
+  public:
+    	...
+  };
+  ```
+
++ **实现要点(循环计数法)：**
+
+  + 关键操作：
+
+    + 进队列：
+
+      ```c++
+      m_space[m_rear] = e;
+      m_rear = (m_rear + 1) % N;
+      ```
+
+    + 出队列：
+
+      ```c++
+      m_front = (m_front + 1) % N;
+      ```
+
+  + 队列状态：
+
+    + 对空：
+
+      ```c++
+      (m_length == 0) && (m_front == m_rear)
+      ```
+
+    + 队满
+
+      ```c++
+      (m_length == N) && (m_front == m_rear)
+      ```
+
+  
+
+### 4.队列的链式实现
+
+<img src="../images/Queue3.png" style="zoom:30%;" />
+
++ **设计要点：**
+
+  + 类模板，是抽象父类Queue的子类
+  + 在内部使用链式结构实现元素的存储
+  + 在链表的头部和尾部进行操作
+
++ **设计模式：**
+
+  <img src="../images/Queue4.png" style="zoom:35%;" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

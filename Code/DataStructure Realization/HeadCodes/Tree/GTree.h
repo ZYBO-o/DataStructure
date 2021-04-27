@@ -7,6 +7,7 @@
 
 #include "Tree.h"
 #include "GTreeNode.h"
+#include "../Queue/LinkQueue.h"
 
 namespace DataStructure
 {
@@ -14,6 +15,10 @@ namespace DataStructure
 template<typename T>
 class GTree : public Tree<T> {
 protected:
+
+
+    //为层次遍历定义队列
+    LinkQueue<GTreeNode<T>*> m_queue;
     //功能函数：根据值查找函数
     GTreeNode<T>* find(GTreeNode<T>* node, const T& value) const {
         GTreeNode<T>* ret = nullptr;
@@ -130,6 +135,7 @@ protected:
         return ret;
     }
 public:
+    GTree() {}
 
     bool insert(TreeNode<T>* node) {
         bool ret = true;
@@ -192,11 +198,12 @@ public:
         } else {
             //删除，并返回树
             remove(node, ret);
+            m_queue.clear();
         }
         return ret;
     }
 
-    SharedPointer<Tree<T>> remove(TreeNode<T>* node) {
+    SharedPointer<Tree<T>> remove(TreeNode<T>* node)  {
         GTree<T>* ret = nullptr;
         //找到需要删除的结点所在
         node = find(node);
@@ -206,6 +213,7 @@ public:
         } else {
             //删除，并返回树
             remove(dynamic_cast<GTreeNode<T>*>(node), ret);
+            m_queue.clear();
         }
         return ret;
     }
@@ -238,7 +246,53 @@ public:
     void clear() {
         free(root());
         this->m_root = nullptr;
-        std::cout << "The the tree successfully!" << endl;
+        m_queue.clear();
+    }
+
+    //层次遍历初始化
+    bool begin () {
+        bool ret = (root() != nullptr);
+
+        if (ret) {
+            m_queue.clear();
+            m_queue.add(root());
+        }
+
+        return ret;
+    }
+
+    //判断层次遍历是否已经完成
+     bool end () {
+        return (m_queue.length() == 0);
+    }
+
+    //层序遍历游标指向下一个结点
+    bool next(){
+        bool ret = (m_queue.length() > 0);
+
+        if(ret) {
+            GTreeNode<T>* node = m_queue.front();
+            m_queue.remove();
+            for (node->child.move(0); !node->child.end(); node->child.next()) {
+                //孩子结点压入队列
+                m_queue.add(node->child.current());
+            }
+        }
+
+        return ret;
+    }
+
+    //返回游标指向的结点数据元素
+    T current() {
+        if( !end() ) {
+            return m_queue.front()->value;
+        } else {
+            THROW_EXCEPTION(InvalidOperationException, "No value at current position.. ");
+        }
+    }
+
+    ~GTree() {
+        clear();
     }
 };
 }

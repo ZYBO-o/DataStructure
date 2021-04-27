@@ -13,17 +13,11 @@ namespace DataStructure
 {
 template<typename T>
 class GTreeNode : public TreeNode<T> {
-protected:
-    bool m_flag;//工厂模式
-    //重载new为保护模式
-    void* operator new (unsigned long size) throw () {
-        return Object::operator new(size);
-    }
+
 public:
     LinkList<GTreeNode<T>*> child;
-    GTreeNode() : m_flag(false){}
 
-    bool flag () {return m_flag;}
+
 
     static GTreeNode<T>* NewNode() {
         GTreeNode<T>* ret = new GTreeNode<T> ();
@@ -32,6 +26,7 @@ public:
         }
         return ret;
     }
+
 
 
 };
